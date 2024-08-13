@@ -13,7 +13,7 @@ module.exports.create_topic = async (req, res) => {
     return res.status(201).json(learn);
   } catch (err) {
     console.log(err);
-    res.status(500).send("some error occured.");
+    return res.status(500).send("some error occured.");
   }
 };
 
@@ -28,10 +28,10 @@ module.exports.category_get = async (req, res) => {
 
     if (!learn) return res.status(400).send("No items found. :( ");
 
-    res.status(200).json(learn);
+    return res.status(200).json(learn);
   } catch (err) {
     console.log(err);
-    res.status(500).send("some error occured.");
+    return res.status(500).send("some error occured.");
   }
 };
 
@@ -42,7 +42,7 @@ module.exports.delete_topic = async (req, res) => {
     const learn = await Learn.findByPk(_id);
     if (!learn) return res.status(400).send("Resource not found.");
     await learn.destroy();
-    return res.status(204);
+    return res.status(200);
   } catch (err) {
     console.error(err);
     return res.send(500).send("Some error occured.");
@@ -60,10 +60,10 @@ module.exports.category_list_get = async (req, res) => {
     categories_json.forEach((element) => {
       categories.push(element.category);
     });
-    res.status(200).json(categories);
+    return res.status(200).json(categories);
   } catch (err) {
     console.log(err);
-    res.status(500).send("Some error occured");
+    return res.status(500).send("Some error occured");
   }
 };
 

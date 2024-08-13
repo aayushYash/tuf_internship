@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "../components/Headers";
 import Title from "../components/Title";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -66,12 +67,14 @@ const Landing = () => {
             </p>
           </div>
         </div>
+        <Link to={'/learn'} >
         <a
           class="rounded-full lg:text-[16px] text-[14px] lg:px-8 px-6 py-2 md:mt-0 mt-4 lg:py-3 bg-red-600  text-white hover:bg-[#d41f30]"
-          href="/plus"
+          href="/learn"
         >
           Start Preparation
         </a>
+        </Link>
       </div>
     </div>
   );

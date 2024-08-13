@@ -12,7 +12,7 @@ const Title = ({children}) => {
 
     </div>
     {/* title */}
-    <h1 className="text-[#d41f30] align-middle pb-1 font-sans font-bold text-[30px] mx-4">{children}</h1>
+    <h1 className="text-[#e11d48] align-middle pb-1 font-sans font-bold text-[30px] mx-4">{children}</h1>
     {/* three dots */}
     <div className="flex flex-row-reverse gap-x-2 items-center">
 

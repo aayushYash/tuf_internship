@@ -4,10 +4,11 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const InputText = ({ value,  placeholder, type, onChange }) => {
   const [icon, setIcon] = useState(
-    type == "password" ? faLock : type == "email" ? faEnvelope : ""
+    type == "password" ? faLock : type == "text" ? faUser : ""
   );
 
   const [inputType, setInputType] = useState(type);

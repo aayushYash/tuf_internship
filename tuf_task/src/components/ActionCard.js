@@ -11,7 +11,7 @@ const ActionCard = ({text, key, onClick}) => {
         {/* icon */}
         <FontAwesomeIcon className="hover:colo-[#d41f30]" icon ={icon} color="white"  />
         {/* Text */}
-        <h2 className="font-bold  text-[22px] text-center uppercase group">{text}</h2>
+        <h2 className="font-bold  text-[22px] text-center uppercase group text-sm">{text}</h2>
 
     </div>
 }

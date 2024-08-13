@@ -5,6 +5,8 @@ import AdminDashboard from "./screens/AdminDashboard";
 import Login from "./screens/Login";
 import Header from "./components/Headers";
 import Course from "./screens/Course";
+import Learn from "./screens/Learn";
+import Editor from "./components/Editor";
 
 
 const App = () => {
@@ -17,7 +19,13 @@ const App = () => {
          <Route path="/" element={<Landing />} />
          <Route path="/admin" element={<AdminDashboard />} />
          <Route path="/login" element={<Login />} />
+         <Route path="/add" element={<Editor />} />
+         <Route path="/edit" element={<Editor />} />
          <Route path="/course/">
+            <Route path=":course" element={<Course />} />
+         </Route>
+         <Route path="/learn" element={<Learn />}/>
+         <Route path="/learn">
             <Route path=":course" element={<Course />} />
          </Route>
       </Routes>

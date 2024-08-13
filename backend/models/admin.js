@@ -1,6 +1,7 @@
 "use strict";
 const jwt = require("jsonwebtoken");
 const { Model } = require("sequelize");
+const { body } = require("express-validator");
 
 module.exports = (sequelize, DataTypes) => {
   class Admin extends Model {
@@ -47,4 +48,13 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
   return Admin;
+};
+
+module.exports.adminValidationRules = () => {
+  return [
+    // username must be an email
+    body("username").notEmpty().isAlphanumeric(),
+    // password must be at least 5 chars long
+    body("password").notEmpty(),
+  ];
 };

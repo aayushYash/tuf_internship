@@ -1,4 +1,5 @@
 "use strict";
+const { body } = require("express-validator");
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Learn extends Model {
@@ -42,4 +43,12 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
   return Learn;
+};
+
+module.exports.learnValidationRules = () => {
+  return [
+    body("topic").notEmpty(),
+    body("explanation").notEmpty(),
+    body("category").notEmpty(),
+  ];
 };
